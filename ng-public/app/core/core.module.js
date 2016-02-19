@@ -25,9 +25,9 @@
 					url: '/me',
 					template: '<me></me>'
 				})
-				.state('Profiles.You', {
-					url: '/you',
-					template: '<you></you>'
+				.state('Profiles.View', {
+					url: '/:id',
+					template: '<profile-view></profile-view>'
 				})
 		
 		$urlRouterProvider.otherwise('/');

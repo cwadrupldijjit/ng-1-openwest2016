@@ -1,0 +1,10 @@
+<div id="profiles-template">
+	<nav>
+		<ul>
+			<li ui-sref="Profiles.me">Me</li>
+			<li ng-repeat="profile in vm.availableProfiles" ui-sref="Profiles.View({id: profile.id})">{{profile.name}}</li>
+		</ul>
+	</nav>
+	<h3>Profile Selection</h3>
+	<ui-view></ui-view>
+</div>
