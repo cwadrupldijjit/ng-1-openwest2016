@@ -1,11 +1,20 @@
 <p>Viewing your profile.</p>
 
 <h3>{{ vm.profile.name }}</h3>
+
 <p>
 	<b>Profile Pic:</b><br>
 	<img src="{{ vm.profile.image }}" alt="Profile Pic">
 </p>
-
-<p><b>Age:</b> {{ vm.profile.age }}</p>
-<p><b>Favorite Food:</b> {{ vm.profile.favoriteFood }}</p>
-<p><b>Interests:</b> {{!!!!! vm.profile.interests }}</p>
+<p>
+	<b>Age:</b> {{ vm.profile.age }}
+</p>
+<p>
+	<b>Favorite Food:</b> {{ vm.profile.favoriteFood }}
+</p>
+<p>
+	<b>Interests:</b> 
+	<ul>
+		<li ng-repeat="interest in vm.profile.interests track by $index">{{ interest }}</li>
+	</ul>
+</p>

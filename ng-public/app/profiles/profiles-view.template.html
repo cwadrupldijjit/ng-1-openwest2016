@@ -1,9 +1,18 @@
 <h3>viewing profile of {{ vm.profile.name || 'undefined' }}</h3>
+
 <p>
 	<b>Profile Pic:</b><br>
-	<img src="{{ vm.profile.image }}" alt="Profile Pic">
+	<img src="{{ vm.profile.image }}"  alt="Profile Pic">
 </p>
-
-<p><b>Age:</b> {{ vm.profile.age }}</p>
-<p><b>Favorite Food:</b> {{ vm.profile.favoriteFood }}</p>
-<p><b>Interests:</b> {{!!!! vm.profile.interests }}</p>
+<p>
+	<b>Age:</b> {{ vm.profile.age }}
+</p>
+<p>
+	<b>Favorite Food:</b> {{ vm.profile.favoriteFood }}
+</p>
+<p>
+	<b>Interests:</b> 
+	<ul>
+		<li ng-repeat="interest in vm.profile.interests track by $index">{{ interest }}</li>
+	</ul>
+</p>
