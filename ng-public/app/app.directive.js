@@ -10,7 +10,9 @@
 			restrict: 'E',
 			templateUrl: '/ng-app/app.template.html',
 			controller: App,
-			controllerAs: 'vm'
+			controllerAs: 'vm',
+			scope: {},
+			bindToController: true
 		};
 	}
 	

@@ -19,7 +19,7 @@
 			
 			$http.get('/api/profiles/me')
 				.then(function getCurrentProfilesSuccess(response) {
-					deferred.resolve(response);
+					deferred.resolve(response.data);
 				}, function getCurrentProfilesErr(err) {
 					deferred.reject(err);
 				});
@@ -32,7 +32,7 @@
 			
 			$http.get('/api/profiles/current')
 				.then(function getCurrentProfilesSuccess(response) {
-					deferred.resolve(response);
+					deferred.resolve(response.data);
 				}, function getCurrentProfilesErr(err) {
 					deferred.reject(err);
 				});
@@ -45,7 +45,7 @@
 			
 			$http.get('/api/profiles/' + id)
 				.then(function getProfileSuccess(response) {
-					deferred.resolve(response);
+					deferred.resolve(response.data);
 				}, function getProfileErr(err) {
 					deferred.reject(err);
 				});

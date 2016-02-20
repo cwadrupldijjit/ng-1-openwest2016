@@ -4,7 +4,7 @@ import express = require('express');
 import bodyParser = require('body-parser');
 import cors = require('cors');
 
-import {  } from './routes';
+import { router } from './routes';
 
 let app = express();
 let pathToNgPublic = __dirname + '/../ng-public';
@@ -20,6 +20,9 @@ app.use('/shared', express.static(__dirname + '/../shared'));
 
 app.use('/ng-app', express.static(pathToNgPublic + '/app'));
 app.use('/ng2-app', express.static(pathToNg2Public + '/app'));
+
+
+router(app);
 
 
 app.all('/ng-example*', (req, res) => {

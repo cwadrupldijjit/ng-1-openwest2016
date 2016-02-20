@@ -10,7 +10,9 @@
 			restrict: 'E',
 			templateUrl: '/ng-app/profiles/profiles.template.html',
 			controller: Profiles,
-			controllerAs: 'vm'
+			controllerAs: 'vm',
+			scope: {},
+			bindToController: true
 		};
 	}
 	
