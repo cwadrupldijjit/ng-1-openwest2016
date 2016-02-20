@@ -8,7 +8,7 @@
 	function MeDirective() {
 		return {
 			restrict: 'E',
-			templateUrl: '/ng-app/profiles/profiles-me.template.html',
+			templateUrl: '/ng-app/profiles/me/profiles-me.template.html',
 			controller: Me,
 			controllerAs: 'vm',
 			scope: {},

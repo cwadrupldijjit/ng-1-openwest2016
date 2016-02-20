@@ -8,7 +8,7 @@
 	function ProfileViewDirective() {
 		return {
 			restrict: 'E',
-			templateUrl: '/ng-app/profiles/profiles-view.template.html',
+			templateUrl: '/ng-app/profiles/view/profiles-view.template.html',
 			controller: ProfileView,
 			controllerAs: 'vm',
 			scope: {},
