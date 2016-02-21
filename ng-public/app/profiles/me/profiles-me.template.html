@@ -16,5 +16,6 @@
 	<b>Interests:</b> 
 	<ul>
 		<li ng-repeat="interest in vm.profile.interests track by $index">{{ interest }}</li>
+		<li ng-click="vm.addInterest()" ng-if="vm.profile.interests.length <= 5">Add new</li>
 	</ul>
 </p>

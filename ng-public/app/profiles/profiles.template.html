@@ -1,10 +1,11 @@
-<div id="profiles-template">
+<div id="profiles-template" class="centered-gt-1000">
+	<h4>Profile Selection</h4>
 	<nav>
 		<ul>
 			<li ui-sref="Profiles.Me">Me</li>
 			<li ng-repeat="profile in vm.availableProfiles" ui-sref="Profiles.View({id: profile.id})">{{profile.name}}</li>
+			<li ui-sref="Profiles.Add">Add new</li>
 		</ul>
 	</nav>
-	<h3>Profile Selection</h3>
-	<ui-view>No profile selected. Select one from the list above to view.</ui-view>
+	<ui-view>No profile selected. Select one from the list above to view, or add a new profile by clicking the link above.</ui-view>
 </div>

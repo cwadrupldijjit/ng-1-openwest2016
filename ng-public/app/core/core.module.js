@@ -25,10 +25,14 @@
 					url: '/me',
 					template: '<me></me>'
 				})
+				.state('Profiles.Add', {
+					url: '/add',
+					template: '<add></add>'
+				})
 				.state('Profiles.View', {
 					url: '/:id',
 					template: '<profile-view></profile-view>'
-				})
+				});
 		
 		$urlRouterProvider.otherwise('/');
 		

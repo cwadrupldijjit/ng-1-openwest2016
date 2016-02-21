@@ -16,9 +16,22 @@
 		};
 	}
 	
-	App.$inject = [];
+	App.$inject = ['MobileService', '$window', '$scope'];
 	
-	function App() {
+	function App(MobileService, $window, $scope) {
+		var vm = this;
 		
+		vm.isBigEnough = MobileService.isBigEnough;
+		vm.isOpen = false;
+		vm.toggleMain = toggleMain;
+		vm.returnToLanding = returnToLanding;
+		
+		function toggleMain() {
+			vm.isOpen = !vm.isOpen;
+		}
+		
+		function returnToLanding() {
+			console.log(window.location.pathname = '/');
+		}
 	}
 })();

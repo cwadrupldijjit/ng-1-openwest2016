@@ -13,6 +13,10 @@ function router(app) {
 		res.json(tempArr);
 	});
 	
+	app.post('/api/profiles/add', (req, res) => {
+		
+	});
+	
 	app.get('/api/profiles/:id', (req, res) => {
 		let profileArr = profiles.filter((value) => {
 			if (value.id == req.params.id) {
