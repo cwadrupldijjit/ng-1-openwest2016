@@ -11,7 +11,7 @@ let profiles: ProfileInterface[] = [
 	{
 		name: 'Sam Skeen',
 		age: 23,
-		image: '',
+		image: '/common-assets/my-avatar.jpg',
 		interests: [
 			'music',
 			'drawing',
@@ -24,7 +24,7 @@ let profiles: ProfileInterface[] = [
 	{
 		name: 'Jeff Hanson',
 		age: 32,
-		image: '',
+		image: '/common-assets/jeff-avatar.png',
 		interests: [
 			'react',
 			'swimming',
@@ -37,7 +37,7 @@ let profiles: ProfileInterface[] = [
 	{
 		name: 'Leena Mumph',
 		age: 19,
-		image: '',
+		image: '/common-assets/leena-avatar.png',
 		interests: [
 			'hair styling',
 			'baking',

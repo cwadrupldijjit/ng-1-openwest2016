@@ -5,6 +5,12 @@ html, body {
 	padding: 0;
 }
 
+* {
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	transition: all .1s linear;
+}
+
 .centered-gt-1000 {
 	padding: 18px;
 }
@@ -53,6 +59,11 @@ html, body {
 	.centered-gt-1000 {
 		margin: 0 auto;
 		max-width: 1000px;
+	}
+	
+	#home-template, #profiles-template {
+		padding: 50px;
+		padding-top: 75px;
 	}
 }
 

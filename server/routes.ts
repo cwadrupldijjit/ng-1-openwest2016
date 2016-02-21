@@ -14,7 +14,10 @@ function router(app) {
 	});
 	
 	app.post('/api/profiles/add', (req, res) => {
-		
+		req.body.id = profiles[profiles.length - 1].id + 1;
+		req.body.image = '/common-assets/generic-avatar.png';
+		profiles.push(req.body);
+		res.json(req.body);
 	});
 	
 	app.get('/api/profiles/:id', (req, res) => {

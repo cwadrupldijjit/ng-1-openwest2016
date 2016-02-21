@@ -16,9 +16,9 @@
 		};
 	}
 	
-	Profiles.$inject = ['ProfileService'];
+	Profiles.$inject = ['$scope', 'ProfileService'];
 	
-	function Profiles(ProfileService) {
+	function Profiles($scope, ProfileService) {
 		var vm = this;
 		
 		vm.me;
@@ -43,7 +43,12 @@
 				}, function getProfilesError(err) {
 					console.warn(err);
 				});
-			
 		}
+		
+		$scope.$watch(function watchForProfileChanges() {
+			return ProfileService.profiles.length;
+		}, function updateProfiles(newVal) {
+			vm.availableProfiles = ProfileService.profiles;
+		})
 	}
 })();

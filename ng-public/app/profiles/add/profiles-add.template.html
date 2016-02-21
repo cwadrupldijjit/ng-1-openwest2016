@@ -1,1 +1,41 @@
 <h3>Add New Profile form</h3>
+
+<form>
+	<p>
+		<label for="vm.profile.name">Name</label><br>
+		<input type="text" ng-model="vm.profile.name">
+	</p>
+	<p>
+		<label for="vm.profile.age">Age</label><br>
+		<input type="text" ng-model="vm.profile.age">
+	</p>
+	<p>
+		<label for="vm.profile.favoriteFood">Favorite Food</label><br>
+		<input type="text" ng-model="vm.profile.favoriteFood">
+	</p>
+	<p>
+		<label for="vm.profile.name">Interests</label>
+		<ul>
+			<li ng-if="!(vm.profile.interests.length !== 0 || vm.interestsEdit.new)" ng-click="vm.editInterest('new')">No interests are currently listed. Click to add one.</li>
+			<li ng-repeat="interest in vm.profile.interests track by $index">
+				<span ng-if="!vm.interestsEdit[$index]">
+					<span ng-click="vm.editInterest($index)">{{ interest }}</span>
+					<span class="delete-interest" ng-click="vm.deleteInterest($index)">x</span>
+				</span>
+				<input type="text" ng-if="vm.interestsEdit[$index]" ng-model="vm.profile.interests[$index]">
+				<input type="submit" ng-if="vm.interestsEdit[$index]" ng-click="vm.saveInterest($index)">
+				<button ng-if="vm.interestsEdit[$index]" ng-click="vm.cancelInterestEdit($index)">Cancel</button>
+			</li>
+			<li ng-if="(vm.profile.interests.length > 0 && vm.profile.interests.length <= 5) || vm.interestsEdit.new">
+				<span ng-if="!vm.interestsEdit.new" ng-click="vm.editInterest('new')">Add new</span>
+				<input type="text" ng-if="vm.interestsEdit.new" ng-model="vm.newInterest">
+				<input type="submit" ng-if="vm.interestsEdit.new" ng-click="vm.saveInterest('new')">
+				<button ng-if="vm.interestsEdit.new" ng-click="vm.cancelInterestEdit('new')">Cancel</button>
+			</li>
+		</ul>
+	</p>
+	<p>
+		<input type="submit" ng-click="vm.saveProfile()">
+		<button ng-click="vm.cancelEditProfile()">Cancel</button>
+	</p>
+</form>
