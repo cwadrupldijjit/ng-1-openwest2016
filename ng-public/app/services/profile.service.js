@@ -14,6 +14,8 @@
 		svc.getCurrentProfiles = getCurrentProfiles;
 		svc.getProfile = getProfile;
 		svc.saveProfile = saveProfile;
+		svc.saveInterest = saveInterest;
+		svc.deleteInterest = deleteInterest;
 		svc.profiles = [];
 		
 		function getMe() {
@@ -67,6 +69,36 @@
 					svc.profiles.push(response.data);
 					deferred.resolve(response.data);
 				}, function addProfileError(err) {
+					deferred.reject(err);
+				});
+			
+			return deferred.promise;
+		}
+		
+		function saveInterest(interest, profileId) {
+			var deferred = $q.defer();
+			var data = {interest: interest};
+			console.log('svc', interest);
+			$http.post('/api/profiles/' + profileId + '/interests', data)
+				.then(function SaveInterestSuccess(response) {
+					console.log('interest', response.data.interest);
+					deferred.resolve(response.data.interest);
+				}, function saveInterestError(err) {
+					deferred.reject(err);
+				});
+			
+			return deferred.promise;
+		}
+		
+		function deleteInterest(interest, profileId) {
+			var deferred = $q.defer();
+			var data = {interest: interest};
+			console.log('svc', interest);
+			$http.delete('/api/profiles/' + profileId + '/interests', data)
+				.then(function deleteInterestSuccess(response) {
+					console.log('interest', response.data.interest);
+					deferred.resolve(response.data.interest);
+				}, function deleteInterestError(err) {
 					deferred.reject(err);
 				});
 			

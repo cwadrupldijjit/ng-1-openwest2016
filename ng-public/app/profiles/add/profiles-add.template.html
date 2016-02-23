@@ -14,7 +14,7 @@
 		<input type="text" ng-model="vm.profile.favoriteFood">
 	</p>
 	<p>
-		<label for="vm.profile.name">Interests</label>
+		<label for="vm.profile.interests">Interests</label>
 		<ul>
 			<li ng-if="!(vm.profile.interests.length !== 0 || vm.interestsEdit.new)" ng-click="vm.editInterest('new')">No interests are currently listed. Click to add one.</li>
 			<li ng-repeat="interest in vm.profile.interests track by $index">

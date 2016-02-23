@@ -42,7 +42,7 @@
 			ProfileService
 				.saveProfile(vm.profile)
 					.then(function addProfileSuccess(response) {
-						$state.go('Profiles', {newProfile: response});
+						$state.go('Profiles.View', {newProfile: response, id: response.id});
 					}, function addProfileError(err) {
 						alert(err);
 					});

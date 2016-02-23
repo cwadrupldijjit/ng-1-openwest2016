@@ -35,6 +35,47 @@ function router(app) {
 		}
 		res.json(profileArr[0]);
 	});
+	
+	app.post('/api/profiles/:id/interests', (req, res) => {
+		let profileArr = profiles.filter((value) => {
+			if (value.id == req.params.id) {
+				return true;
+			}
+			
+			return false;
+		});
+		
+		if (!profileArr[0]) {
+			let error = new Error('Could not find profile');
+			return res.status(404).send(error);
+		}
+		
+		profileArr[0].interests.push(req.body.interest);
+		
+		res.json(req.body);
+	});
+	
+	app.delete('/api/profiles/:id/interests', (req, res) => {
+		let profileArr = profiles.filter((value) => {
+			if (value.id == req.params.id) {
+				return true;
+			}
+			
+			return false;
+		});
+		
+		if (!profileArr[0]) {
+			let error = new Error('Could not find profile');
+			return res.status(404).send(error);
+		}
+		
+		let profileIndex = profiles.indexOf(profileArr[0]);
+		if (profileIndex !== -1) {
+			let interestIndex = profiles[profileIndex].interests.indexOf(req.body.interest);
+		}
+		
+		res.json(req.body);
+	});
 }
 
 export { router };
