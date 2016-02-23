@@ -31,7 +31,7 @@
 		}
 		
 		function returnToLanding() {
-			console.log(window.location.pathname = '/');
+			$window.location.pathname = '/';
 		}
 	}
 })();

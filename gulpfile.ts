@@ -33,7 +33,7 @@ function TypescriptOptions(module,
 function compilePublic() {
 	gulp.src(pathToPublicSass)
 		.pipe(sourcemaps.init())
-			.pipe(sass())
+			.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('ng-public'));
 }
@@ -49,7 +49,7 @@ function compilePublic2() {
 	
 	gulp.src(pathToPublic2Sass)
 		.pipe(sourcemaps.init())
-			.pipe(sass())
+			.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('ng2-public'));
 }
@@ -65,7 +65,7 @@ function compileUpgrade() {
 	
 	gulp.src(pathToUpgradeSass)
 		.pipe(sourcemaps.init())
-			.pipe(sass())
+			.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('ng-upgrade-public'));
 }

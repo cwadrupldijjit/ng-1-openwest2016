@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>ng2-example</title>
+		
+		<base href="/ng2-example/">
+	</head>
+	
+	<body>
+		<app>Loading . . .</app>
+		
+		<script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
+		<script src="/node_modules/systemjs/dist/system.src.js"></script>
+		<script src="/node_modules/rxjs/bundles/Rx.js"></script>
+		<script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
+		<script src="/node_modules/angular2/bundles/router.dev.js"></script>
+		
+		<script>
+			System.config({
+				map: {
+					'/': '/ng2-app'
+				},
+				packages: {      
+					'/ng2-app': {
+						format: 'register',
+						defaultExtension: 'js'
+					}
+				}
+			});
+			
+			System.import('/ng2-app/boot')
+				  .then(null, console.error.bind(console));
+		</script>
+	</body>
+</html>

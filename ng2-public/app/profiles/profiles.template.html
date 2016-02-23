@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/ng-app/profiles/profiles.styles.css">
+<div id="profiles-template" class="centered-gt-1000">
+	<nav>
+		<div ng-click="vm.toggleProfiles()">
+			<span ng-class="{'collapse': vm.isShowing}">&gt;</span>
+		</div>
+		<h4 ng-class="{'show': vm.isShowing}">Profile Selection:</h4>
+		<ul ng-class="{'show': vm.isShowing}">
+			<li ng-click="vm.toggleProfiles()" [routerLink]="['./Me']">Me</li>
+			<li ng-click="vm.toggleProfiles()" [routerLink]="['./View', {id: 2}]" ng-repeat="profile in vm.availableProfiles track by $index">profile.name</li>
+			<li ng-click="vm.toggleProfiles()" [routerLink]="['./Add']">+ Add new</li>
+		</ul>
+	</nav>
+	<router-outlet></router-outlet>
+</div>

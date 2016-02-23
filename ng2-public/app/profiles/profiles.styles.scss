@@ -1,0 +1,121 @@
+#profiles-template {
+	padding-top: 120px;
+	
+	@media screen and (min-width: 600px) {
+		padding-top: 75px;
+	}
+	
+	nav {
+		background-color: rgba(255, 255, 255, .95);
+		left: 0;
+		padding-top: 15px;
+		position: fixed;
+		top: 55px;
+			
+		@media screen and (min-width: 600px) {
+			position: static;
+		}
+		
+		> * {
+			display: none;
+			
+			@media screen and (min-width: 600px) {
+				display: block;
+			}
+			
+			&.show {
+				display: block;
+			
+				@media screen and (min-width: 600px) {
+					display: flex;
+				}
+			}
+		}
+		
+		> h4 {
+			padding: 0 15px;
+		}
+		
+		> div {
+			cursor: pointer;
+			display: block;
+			font-weight: 900;
+			text-align: right;
+			
+			@media screen and (min-width: 600px) {
+				display: none;
+			}
+			
+			span {
+				background-color: rgba(100, 100, 200, .3);
+				display: inline-block;
+				text-align: center;
+				height: 30px;
+				transition: none;
+				width: 30px;
+				
+				&.collapse {
+					transform: rotate(-180deg);
+				}
+			}
+		}
+		
+		ul {
+			text-align: center;
+			list-style: none;
+			margin-bottom: 0;
+			padding: 0;
+			
+			@media screen and (min-width: 600px) {
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+				margin-bottom: 30px;
+			}
+			
+			li {
+				cursor: pointer;
+				padding: 10px 15px;
+				
+				&:hover {
+					background-color: rgba(50, 50, 50, .3);
+				}
+			}
+		}
+	}
+	
+	h3 {
+		font-size: 24pt;
+	}
+	
+	ui-view {
+		p {
+			img {
+				max-width: 300px;
+			}
+		}
+	}
+	
+	.profile-interests {
+		cursor: pointer;
+	}
+	
+	.delete-interest {
+		border-radius: 50%;
+		display: inline-block;
+		line-height: 1em;
+		opacity: .2;
+		padding: .2em;
+		text-align: center;
+		width: 1em;
+		
+		&:hover {
+			background-color: #f00;
+			box-shadow: 0 0 5px #777;
+			color: white;
+			cursor: pointer;
+			font-weight: bolder;
+			opacity: 1;
+		}
+	}
+}
