@@ -1,7 +1,6 @@
-<h3>viewing profile of {{ vm.profile.name || 'undefined' }}</h3>
+<h3>{{ vm.profile.name || 'undefined' }}</h3>
 
 <p>
-	<b>Profile Pic:</b><br>
 	<img src="{{ vm.profile.image }}"  alt="Profile Pic">
 </p>
 <p>
@@ -10,7 +9,7 @@
 <p>
 	<b>Favorite Food:</b> {{ vm.profile.favoriteFood }}
 </p>
-<p>
+<p ng-if="vm.profile.interests.length">
 	<b>Interests:</b> 
 	<ul>
 		<li ng-repeat="interest in vm.profile.interests track by $index">{{ interest }}</li>

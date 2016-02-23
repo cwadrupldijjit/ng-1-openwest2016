@@ -23,9 +23,15 @@
 		
 		vm.me;
 		vm.availableProfiles;
+		vm.isShowing = false;
+		vm.toggleProfiles = toggleProfiles;
 		
 		getMe();
 		getCurrentProfiles();
+		
+		function toggleProfiles() {
+			vm.isShowing = !vm.isShowing;
+		}
 		
 		function getMe() {
 			ProfileService.getMe()

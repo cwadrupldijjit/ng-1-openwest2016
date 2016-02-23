@@ -75,11 +75,15 @@
 			return deferred.promise;
 		}
 		
-		function saveInterest(interest, profileId) {
+		function saveInterest(interest, profileId, index) {
 			var deferred = $q.defer();
+			var url = '/api/profiles/' + profileId + '/interests';
 			var data = {interest: interest};
+			if (index !== 'new') {
+				url += '?index=' + index;
+			}
 			console.log('svc', interest);
-			$http.post('/api/profiles/' + profileId + '/interests', data)
+			$http.post(url, data)
 				.then(function SaveInterestSuccess(response) {
 					console.log('interest', response.data.interest);
 					deferred.resolve(response.data.interest);

@@ -45,12 +45,17 @@ function router(app) {
 			return false;
 		});
 		
+		
 		if (!profileArr[0]) {
 			let error = new Error('Could not find profile');
 			return res.status(404).send(error);
 		}
 		
-		profileArr[0].interests.push(req.body.interest);
+		if (req.query.index) {
+			profileArr[0].interests[req.query.index] = req.body.interest;
+		} else {
+			profileArr[0].interests.push(req.body.interest);
+		}
 		
 		res.json(req.body);
 	});

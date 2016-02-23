@@ -1,9 +1,8 @@
-<p>Viewing your profile.</p>
+<p>Viewing your profile</p>
 
 <h3>{{ vm.profile.name }}</h3>
 
 <p>
-	<b>Profile Pic:</b><br>
 	<img src="{{ vm.profile.image }}" alt="Profile Pic">
 </p>
 <p>
@@ -14,7 +13,7 @@
 </p>
 <p>
 	<label for="vm.profile.interests">Interests</label>
-	<ul>
+	<ul class="profile-interests">
 		<li ng-if="!(vm.profile.interests.length !== 0 || vm.interestsEdit.new)" ng-click="vm.editInterest('new')">No interests are currently listed. Click to add one.</li>
 		<li ng-repeat="interest in vm.profile.interests track by $index">
 			<span ng-if="!vm.interestsEdit[$index]">

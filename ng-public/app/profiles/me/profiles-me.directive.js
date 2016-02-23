@@ -63,15 +63,18 @@
 			
 			console.log('dir', interest);
 			ProfileService
-				.saveInterest(interest, vm.profile.id)
+				.saveInterest(interest, vm.profile.id, index)
 					.then(function saveInterestSuccess(response) {
-						vm.profile.interests.push(response);
+						if (index === 'new') {
+							vm.profile.interests.push(response);
+							
+							vm.newInterest = '';
+						} else {
+							vm.profile.interests[index] = response;
+						}
+						
 						console.log('response', response);
 						console.log('index', index);
-						
-						if (index === 'new') {
-							vm.newInterest = '';
-						}
 						
 						vm.interestsEdit[index] = '';
 					}, function saveInterestError(err) {
