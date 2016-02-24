@@ -2,7 +2,7 @@
 	'use strict';
 	
 	angular
-		.module('AppOne.profiles')
+		.module('AppThree.profiles')
 		.directive('add', AddDirective);
 	
 	function AddDirective() {

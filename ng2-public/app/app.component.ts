@@ -9,6 +9,9 @@ import 'rxjs/add/operator/map';
 })
 @View({
 	templateUrl: '/ng2-app/app.template.html',
+	styleUrls: [
+		'ng2-app/app.styles.css'
+	],
 	directives: [
 		ROUTER_DIRECTIVES
 	]

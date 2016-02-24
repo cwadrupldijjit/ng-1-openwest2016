@@ -23,36 +23,6 @@ html, body {
 	#home-template :first-child, #profiles-template :first-child {
 		margin-top: 0;
 	}
-#app-template > nav {
-	background-color: #E23237;
-	color: white;
-	font-family: 'Franklin Gothic Semibold', 'Arial Narrow', Arial, sans-serif;
-	left: 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
-}
-	.simple-menu {
-		display: flex;
-		flex-direction: column;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-		.simple-menu > li {
-			cursor: pointer;
-			display: none;
-			flex: 1;
-			padding: 15px 30px;
-			text-align: center;
-		}
-			.simple-menu > li:hover {
-				background-color: rgba(255, 100, 100, .3);
-			}
-			.simple-menu > li:first-of-type,
-			.simple-menu > li.menu-open {
-				display: block;
-			}
 
 
 @media screen and (min-width: 1000px) {
@@ -65,16 +35,4 @@ html, body {
 		padding: 50px;
 		padding-top: 75px;
 	}
-}
-
-@media screen and (min-width: 600px) {
-	.simple-menu {
-		flex-direction: row;
-	}
-		.simple-menu > li {
-			display: block;
-		}
-			.simple-menu > li:first-of-type {
-				display: none;
-			}
 }

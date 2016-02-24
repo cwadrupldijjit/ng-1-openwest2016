@@ -1,5 +1,5 @@
 import { Injectable } from 'angular2/core';
-import { Http, Headers } from 'angular2/http';
+import { Http, Headers, RequestOptions, RequestMethod } from 'angular2/http';
 
 interface ProfileInterface {
 	id?: number;
@@ -23,6 +23,12 @@ class Profile implements ProfileInterface {
 @Injectable()
 class ProfileService {
 	profiles: Profile[] = [];
+	postHeaders: Headers = new Headers({
+		'Content-Type': 'application/json'
+	});
+	postOptions = {
+		headers: this.postHeaders
+	};
 	
 	constructor(public http: Http) {}
 	
@@ -42,7 +48,8 @@ class ProfileService {
 	}
 	
 	saveProfile(profile) {
-		return this.http.post('/api/profiles/add', profile)
+		let data = JSON.stringify(profile);
+		return this.http.post('/api/profiles/add', data, this.postOptions)
 						.map((response) => {
 							this.profiles.push(response.json());
 							return response.json();
@@ -52,16 +59,10 @@ class ProfileService {
 	saveInterest(interest: string, profileId, index) {
 		let url = '/api/profiles/' + profileId + '/interests';
 		let data = JSON.stringify({interest});
-		let headers = new Headers({
-			'Content-Type': 'application/json'
-		});
-		console.log(data);
 		if (index !== 'new') {
 			url += '?index=' + index;
 		}
-		return this.http.post(url, data, {
-											 headers
-										 })
+		return this.http.post(url, data, this.postOptions)
 						.map((response) => response.json());
 	}
 	

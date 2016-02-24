@@ -1,0 +1,33 @@
+<div id="app-template">
+	<nav>
+		<ul class="simple-menu centered-gt-1000">
+			<li 
+				ng-click="vm.toggleMain()"
+			>
+				Toggle Menu
+			</li>
+			<li 
+				ng-click="vm.toggleMain()" 
+				ui-sref="Home" 
+				ng-class="{'menu-open': vm.isOpen}"
+			>
+				Home
+			</li>
+			<li 
+				ng-click="vm.toggleMain()" 
+				ui-sref="Profiles"
+				ng-class="{'menu-open': vm.isOpen}"
+			>
+				Profiles
+			</li>
+			<li 
+				ng-click="vm.returnToLanding()"
+				ng-class="{'menu-open': vm.isOpen}"
+			>
+				Landing page
+			</li>
+		</ul>
+	</nav>
+	
+	<ui-view></ui-view>
+</div>

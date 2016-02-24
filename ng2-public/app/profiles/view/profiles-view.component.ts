@@ -20,12 +20,16 @@ class ViewProfileComponent implements OnInit {
 	};
 	
 	constructor(public ProfileService: ProfileService,
-				public RouteParams: RouteParams) {}
-	
-	ngOnInit() {
+				public RouteParams: RouteParams) {
 		this.ProfileService.getProfile(this.RouteParams.get('id'))
 				.subscribe((response) => this.profile = response,
 						   (err) => console.warn(err));
+	}
+	
+	ngOnInit() {
+		// this.ProfileService.getProfile(this.RouteParams.get('id'))
+		// 		.subscribe((response) => this.profile = response,
+		// 				   (err) => console.warn(err));
 	}
 }
 

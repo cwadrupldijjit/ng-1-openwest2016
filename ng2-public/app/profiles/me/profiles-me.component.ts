@@ -68,7 +68,6 @@ class MeComponent implements OnInit {
 				interest = this.profile.interests[index];
 			}
 			
-			console.log('dir', interest);
 			this.ProfileService
 				.saveInterest(interest, this.profile.id, index)
 					.subscribe((response) => {
@@ -80,15 +79,17 @@ class MeComponent implements OnInit {
 							this.profile.interests[index] = response;
 						}
 						
-						console.log('response', response);
-						console.log('index', index);
-						
 						this.interestsEdit[index] = '';
 					}, (err) => console.warn(err));
 	}
 	
 	cancelInterestEdit(index) {
-		console.log('canceled edit', index);
+		if (index === 'new') {
+			this.newInterest = '';
+		} else {
+			this.profile.interests[index] = this.interestsEdit[index];
+		}
+		this.interestsEdit[index] = '';
 	}
 }
 

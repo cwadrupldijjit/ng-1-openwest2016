@@ -1,29 +1,4 @@
-html, body {
-	background-color: #aaa;
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-}
-
-* {
-	-webkit-transition: all .1s linear;
-	-moz-transition: all .1s linear;
-	transition: all .1s linear;
-}
-
-.centered-gt-1000 {
-	padding: 18px;
-}
-
-#home-template, #profiles-template {
-	background-color: white;
-	box-shadow: 0 0 25px #666, 0 0 5px #666;
-	padding-top: 75px;
-}
-	#home-template :first-child, #profiles-template :first-child {
-		margin-top: 0;
-	}
-#app-template > nav {
+nav {
 	background-color: #E23237;
 	color: white;
 	font-family: 'Franklin Gothic Semibold', 'Arial Narrow', Arial, sans-serif;
@@ -54,19 +29,6 @@ html, body {
 			.simple-menu > li.menu-open {
 				display: block;
 			}
-
-
-@media screen and (min-width: 1000px) {
-	.centered-gt-1000 {
-		margin: 0 auto;
-		max-width: 1000px;
-	}
-	
-	#home-template, #profiles-template {
-		padding: 50px;
-		padding-top: 75px;
-	}
-}
 
 @media screen and (min-width: 600px) {
 	.simple-menu {

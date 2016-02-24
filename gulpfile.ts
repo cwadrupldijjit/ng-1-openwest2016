@@ -14,9 +14,9 @@ let pathToPublicSass = 'ng-public/**/*.scss';
 let pathToPublic2Ts = [pathToReferenceFile, 'ng2-public/**/*.ts'];
 let pathToPublic2Sass = 'ng2-public/**/*.scss';
 let pathToUpgradeTs = [pathToReferenceFile, 'ng-upgrade-public/**/*.ts'];
-let pathToUpgradeSass = 'ng2-public/**/*.scss';
+let pathToUpgradeSass = 'ng-upgrade-public/**/*.scss';
 let pathToServerTs = [pathToReferenceFile, 'server/**/*.ts'];
-let pathToSass = ['ng-public/**/*.scss', 'ng2-public/**/*.scss', 'ng-upgrade-public/**/*.scss'];
+
 function TypescriptOptions(module, 
 						   emitDecoratorMetadata, 
 						   experimentalDecorators) {
