@@ -96,9 +96,8 @@
 		
 		function deleteInterest(interest, profileId) {
 			var deferred = $q.defer();
-			var data = {interest: interest};
 			console.log('svc', interest);
-			$http.delete('/api/profiles/' + profileId + '/interests', data)
+			$http.delete('/api/profiles/' + profileId + '/interests?q=' + interest)
 				.then(function deleteInterestSuccess(response) {
 					console.log('interest', response.data.interest);
 					deferred.resolve(response.data.interest);

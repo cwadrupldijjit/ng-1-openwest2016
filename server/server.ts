@@ -14,6 +14,16 @@ let pathToNgUpgradePublic = __dirname + '/../ng-upgrade-public';
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use((req, res, next) => {
+	if (req.is('text/*')) {
+		req['text'] = '';
+		req.setEncoding('utf8');
+		req.on('data', function(chunk){ req['text'] += chunk });
+		req.on('end', next);
+	} else {
+		next();
+	}
+});
 
 
 app.use('/node_modules', express.static(__dirname + '/../node_modules'));

@@ -1,5 +1,5 @@
 import { Injectable } from 'angular2/core';
-import { Http } from 'angular2/http';
+import { Http, Headers } from 'angular2/http';
 
 interface ProfileInterface {
 	id?: number;
@@ -51,17 +51,22 @@ class ProfileService {
 	
 	saveInterest(interest: string, profileId, index) {
 		let url = '/api/profiles/' + profileId + '/interests';
-		let data = {interest};
+		let data = JSON.stringify({interest});
+		let headers = new Headers({
+			'Content-Type': 'application/json'
+		});
+		console.log(data);
 		if (index !== 'new') {
 			url += '?index=' + index;
 		}
-		return this.http.post(url, JSON.stringify(data))
+		return this.http.post(url, data, {
+											 headers
+										 })
 						.map((response) => response.json());
 	}
 	
 	deleteInterest(interest, profileId) {
-		let data = {interest};
-		return this.http.delete('/api/profiles/' + profileId, data)
+		return this.http.delete('/api/profiles/' + profileId + '/interests?q=' + interest)
 						.map((response) => response.json());
 	}
 }
