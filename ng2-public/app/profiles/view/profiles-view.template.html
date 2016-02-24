@@ -1,0 +1,17 @@
+<h3>{{ profile.name || 'undefined' }}</h3>
+
+<p>
+	<img src="{{ profile.image }}"  alt="Profile Pic">
+</p>
+<p>
+	<b>Age:</b> {{ profile.age }}
+</p>
+<p>
+	<b>Favorite Food:</b> {{ profile.favoriteFood }}
+</p>
+<div *ngIf="profile.interests.length">
+	<b>Interests:</b> 
+	<ul>
+		<li *ngFor="#interest of profile.interests #$index = index">{{ interest }}</li>
+	</ul>
+</div>

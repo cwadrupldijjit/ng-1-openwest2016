@@ -20,6 +20,7 @@ app.use('/node_modules', express.static(__dirname + '/../node_modules'));
 app.use('/common-assets', express.static(__dirname + '/../common-assets'));
 
 app.use('/ng-app', express.static(pathToNgPublic + '/app'));
+app.use('/ng2-example/ng2-app', express.static(pathToNg2Public + '/app'));
 app.use('/ng2-app', express.static(pathToNg2Public + '/app'));
 app.use('/ng-upgrade-app', express.static(pathToNgUpgradePublic + '/app'));
 

@@ -79,7 +79,7 @@
 						vm.interestsEdit[index] = '';
 					}, function saveInterestError(err) {
 						console.warn(err);
-					})
+					});
 		}
 		
 		function deleteInterest(index) {

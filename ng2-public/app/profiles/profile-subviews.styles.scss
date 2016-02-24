@@ -1,0 +1,31 @@
+h3 {
+	font-size: 24pt;
+}
+p {
+	img {
+		max-width: 300px;
+	}
+}
+
+.profile-interests {
+	cursor: pointer;
+}
+
+.delete-interest {
+	border-radius: 50%;
+	display: inline-block;
+	line-height: 1em;
+	opacity: .2;
+	padding: .2em;
+	text-align: center;
+	width: 1em;
+	
+	&:hover {
+		background-color: #f00;
+		box-shadow: 0 0 5px #777;
+		color: white;
+		cursor: pointer;
+		font-weight: bolder;
+		opacity: 1;
+	}
+}

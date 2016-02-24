@@ -1,0 +1,26 @@
+h3 {
+  font-size: 24pt; }
+
+p img {
+  max-width: 300px; }
+
+.profile-interests {
+  cursor: pointer; }
+
+.delete-interest {
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 1em;
+  opacity: .2;
+  padding: .2em;
+  text-align: center;
+  width: 1em; }
+  .delete-interest:hover {
+    background-color: #f00;
+    box-shadow: 0 0 5px #777;
+    color: white;
+    cursor: pointer;
+    font-weight: bolder;
+    opacity: 1; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwL3Byb2ZpbGVzL3Byb2ZpbGUtc3Vidmlld3Muc3R5bGVzLmNzcyIsInNvdXJjZXMiOlsiYXBwL3Byb2ZpbGVzL3Byb2ZpbGUtc3Vidmlld3Muc3R5bGVzLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiaDMge1xyXG5cdGZvbnQtc2l6ZTogMjRwdDtcclxufVxyXG5wIHtcclxuXHRpbWcge1xyXG5cdFx0bWF4LXdpZHRoOiAzMDBweDtcclxuXHR9XHJcbn1cclxuXHJcbi5wcm9maWxlLWludGVyZXN0cyB7XHJcblx0Y3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4uZGVsZXRlLWludGVyZXN0IHtcclxuXHRib3JkZXItcmFkaXVzOiA1MCU7XHJcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG5cdGxpbmUtaGVpZ2h0OiAxZW07XHJcblx0b3BhY2l0eTogLjI7XHJcblx0cGFkZGluZzogLjJlbTtcclxuXHR0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblx0d2lkdGg6IDFlbTtcclxuXHRcclxuXHQmOmhvdmVyIHtcclxuXHRcdGJhY2tncm91bmQtY29sb3I6ICNmMDA7XHJcblx0XHRib3gtc2hhZG93OiAwIDAgNXB4ICM3Nzc7XHJcblx0XHRjb2xvcjogd2hpdGU7XHJcblx0XHRjdXJzb3I6IHBvaW50ZXI7XHJcblx0XHRmb250LXdlaWdodDogYm9sZGVyO1xyXG5cdFx0b3BhY2l0eTogMTtcclxuXHR9XHJcbn0iXSwibWFwcGluZ3MiOiJBQUFBLEVBQUUsQ0FBQztFQUNGLFNBQVMsRUFBRSxJQUFLLEdBQ2hCOztBQUNELENBQUMsQ0FDQSxHQUFHLENBQUM7RUFDSCxTQUFTLEVBQUUsS0FBTSxHQUNqQjs7QUFHRixrQkFBa0IsQ0FBQztFQUNsQixNQUFNLEVBQUUsT0FBUSxHQUNoQjs7QUFFRCxnQkFBZ0IsQ0FBQztFQUNoQixhQUFhLEVBQUUsR0FBSTtFQUNuQixPQUFPLEVBQUUsWUFBYTtFQUN0QixXQUFXLEVBQUUsR0FBSTtFQUNqQixPQUFPLEVBQUUsRUFBRztFQUNaLE9BQU8sRUFBRSxJQUFLO0VBQ2QsVUFBVSxFQUFFLE1BQU87RUFDbkIsS0FBSyxFQUFFLEdBQUksR0FVWDtFQWpCRCxnQkFBZ0IsQUFTZCxNQUFNLENBQUM7SUFDUCxnQkFBZ0IsRUFBRSxJQUFLO0lBQ3ZCLFVBQVUsRUFBRSxZQUFhO0lBQ3pCLEtBQUssRUFBRSxLQUFNO0lBQ2IsTUFBTSxFQUFFLE9BQVE7SUFDaEIsV0FBVyxFQUFFLE1BQU87SUFDcEIsT0FBTyxFQUFFLENBQUUsR0FDWCIsIm5hbWVzIjpbXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */

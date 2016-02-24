@@ -5,6 +5,8 @@
 		<meta charset="UTF-8">
 		<title>ng2-example</title>
 		
+		<link rel="stylesheet" href="/ng2-app/common.styles.css">
+		
 		<base href="/ng2-example/">
 	</head>
 	
@@ -16,10 +18,12 @@
 		<script src="/node_modules/rxjs/bundles/Rx.js"></script>
 		<script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
 		<script src="/node_modules/angular2/bundles/router.dev.js"></script>
+		<script src="/node_modules/angular2/bundles/http.dev.js"></script>
 		
 		<script>
 			System.config({
 				map: {
+					'/ng2-example/ng2-app/': '/ng2-app/',
 					'/': '/ng2-app'
 				},
 				packages: {      
