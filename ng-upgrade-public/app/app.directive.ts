@@ -16,12 +16,11 @@
 		};
 	}
 	
-	App.$inject = ['MobileService', '$window', '$scope'];
+	App.$inject = ['$window', '$scope'];
 	
-	function App(MobileService, $window, $scope) {
+	function App($window, $scope) {
 		var vm = this;
 		
-		vm.isBigEnough = MobileService.isBigEnough;
 		vm.isOpen = false;
 		vm.toggleMain = toggleMain;
 		vm.returnToLanding = returnToLanding;

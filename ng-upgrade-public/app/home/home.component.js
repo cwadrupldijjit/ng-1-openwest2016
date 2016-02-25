@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router'], function(exports_1) {
+System.register(['angular2/core'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,15 +8,12 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1;
+    var core_1;
     var HomeComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
             }],
         execute: function() {
             HomeComponent = (function () {
@@ -24,13 +21,8 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1) {
                 }
                 HomeComponent = __decorate([
                     core_1.Component({
-                        selector: 'home'
-                    }),
-                    core_1.View({
-                        templateUrl: '/ng2-app/home/home.template.html',
-                        directives: [
-                            router_1.ROUTER_DIRECTIVES
-                        ]
+                        selector: 'home',
+                        templateUrl: '/ng2-app/home/home.template.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], HomeComponent);
@@ -41,4 +33,4 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1) {
     }
 });
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9ob21lL2hvbWUuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbIkhvbWVDb21wb25lbnQiLCJIb21lQ29tcG9uZW50LmNvbnN0cnVjdG9yIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFHQTtnQkFBQUE7Z0JBV0FDLENBQUNBO2dCQVhERDtvQkFBQ0EsZ0JBQVNBLENBQUNBO3dCQUNWQSxRQUFRQSxFQUFFQSxNQUFNQTtxQkFDaEJBLENBQUNBO29CQUNEQSxXQUFJQSxDQUFDQTt3QkFDTEEsV0FBV0EsRUFBRUEsa0NBQWtDQTt3QkFDL0NBLFVBQVVBLEVBQUVBOzRCQUNYQSwwQkFBaUJBO3lCQUNqQkE7cUJBQ0RBLENBQUNBOztrQ0FHREE7Z0JBQURBLG9CQUFDQTtZQUFEQSxDQVhBLEFBV0NBLElBQUE7WUFFUSx5Q0FBYSIsImZpbGUiOiJhcHAvaG9tZS9ob21lLmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7Q29tcG9uZW50LCBWaWV3fSBmcm9tICdhbmd1bGFyMi9jb3JlJztcclxuaW1wb3J0IHsgUk9VVEVSX0RJUkVDVElWRVMgfSBmcm9tICdhbmd1bGFyMi9yb3V0ZXInO1xyXG5cclxuQENvbXBvbmVudCh7XHJcblx0c2VsZWN0b3I6ICdob21lJ1xyXG59KVxyXG5AVmlldyh7XHJcblx0dGVtcGxhdGVVcmw6ICcvbmcyLWFwcC9ob21lL2hvbWUudGVtcGxhdGUuaHRtbCcsXHJcblx0ZGlyZWN0aXZlczogW1xyXG5cdFx0Uk9VVEVSX0RJUkVDVElWRVNcclxuXHRdXHJcbn0pXHJcbmNsYXNzIEhvbWVDb21wb25lbnQge1xyXG5cdFxyXG59XHJcblxyXG5leHBvcnQgeyBIb21lQ29tcG9uZW50IH07Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9ob21lL2hvbWUuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbIkhvbWVDb21wb25lbnQiLCJIb21lQ29tcG9uZW50LmNvbnN0cnVjdG9yIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFFQTtnQkFBQUE7Z0JBTUFDLENBQUNBO2dCQU5ERDtvQkFBQ0EsZ0JBQVNBLENBQUNBO3dCQUNWQSxRQUFRQSxFQUFFQSxNQUFNQTt3QkFDaEJBLFdBQVdBLEVBQUVBLGtDQUFrQ0E7cUJBQy9DQSxDQUFDQTs7a0NBR0RBO2dCQUFEQSxvQkFBQ0E7WUFBREEsQ0FOQSxBQU1DQSxJQUFBO1lBRVEseUNBQWEiLCJmaWxlIjoiYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQgfSBmcm9tICdhbmd1bGFyMi9jb3JlJztcclxuXHJcbkBDb21wb25lbnQoe1xyXG5cdHNlbGVjdG9yOiAnaG9tZScsXHJcblx0dGVtcGxhdGVVcmw6ICcvbmcyLWFwcC9ob21lL2hvbWUudGVtcGxhdGUuaHRtbCdcclxufSlcclxuY2xhc3MgSG9tZUNvbXBvbmVudCB7XHJcblx0XHJcbn1cclxuXHJcbmV4cG9ydCB7IEhvbWVDb21wb25lbnQgfTsiXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=

@@ -1,6 +1,6 @@
 (function () {
 	"use strict";
-	
+	console.log('core');
 	angular
 		.module('AppThree.core', [
 			/* 3rd-party modules */

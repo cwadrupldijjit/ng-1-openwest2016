@@ -1,8 +1,5 @@
-import { bootstrap } from 'angular2/platform/browser';
-import { UpgradeAdapter } from 'angular2/upgrade';
-
-const upgradeAdapter = new UpgradeAdapter();
+import { upgradeAdapter } from './adapter';
 
 upgradeAdapter.bootstrap(document.body, ['AppThree'], {strictDI: true});
 
-export { upgradeAdapter };
+import './home/home.directive.js';

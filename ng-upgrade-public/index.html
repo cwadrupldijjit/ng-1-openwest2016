@@ -7,7 +7,7 @@
 		
 		<title>ng2-example</title>
 		
-		<link rel="stylesheet" href="/ng2-app/common.styles.css">
+		<link rel="stylesheet" href="/ng-upgrade-app/common.styles.css">
 		
 		<base href="/ng-upgrade-example/">
 	</head>
@@ -19,6 +19,30 @@
 		<!-- JS LIBRARIES -->
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+		
+		<!-- MODULE FILES -->
+		<script src="/ng-upgrade-app/core/core.module.js"></script>
+		<script src="/ng-upgrade-app/home/home.module.js"></script>
+		<script src="/ng-upgrade-app/profiles/profiles.module.js"></script>
+		<script src="/ng-upgrade-app/app.module.js"></script>
+		
+		<!-- Angular 1.x Dependencies -->
+		<!-- COMMON SERVICES -->
+		<script src="/ng-upgrade-app/services/profile.service.js"></script>
+		
+		<!-- APP COMPONENT -->
+		<script src="/ng-upgrade-app/app.directive.js"></script>
+		
+		<!-- HOME COMPONENT -->
+		<!--<script src="/ng-upgrade-app/home/home.directive.js"></script>-->
+		<script src="/ng-upgrade-app/home/home-main.controller.js"></script>
+		
+		<!-- PROFILES COMPONENT -->
+		<script src="/ng-upgrade-app/profiles/profiles.directive.js"></script>
+		<script src="/ng-upgrade-app/profiles/me/profiles-me.directive.js"></script>
+		<script src="/ng-upgrade-app/profiles/view/profiles-view.directive.js"></script>
+		<script src="/ng-upgrade-app/profiles/add/profiles-add.directive.js"></script>
+		
 		
 		<!-- Angular 2.x Dependencies -->
 		<script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
@@ -45,29 +69,5 @@
 			System.import('/ng-upgrade-app/boot')
 				  .then(null, console.error.bind(console));
 		</script>
-		
-		
-		<!-- Angular 1.x Dependencies -->
-		<!-- MODULE FILES -->
-		<script src="/ng-upgrade-app/core/core.module.js"></script>
-		<script src="/ng-upgrade-app/home/home.module.js"></script>
-		<script src="/ng-upgrade-app/profiles/profiles.module.js"></script>
-		<script src="/ng-upgrade-app/app.module.js"></script>
-		
-		<!-- COMMON SERVICES -->
-		<script src="/ng-upgrade-app/services/profile.service.js"></script>
-		
-		<!-- APP COMPONENT -->
-		<script src="/ng-upgrade-app/app.directive.js"></script>
-		
-		<!-- HOME COMPONENT -->
-		<script src="/ng-upgrade-app/home/home.directive.js"></script>
-		<script src="/ng-upgrade-app/home/home-main.controller.js"></script>
-		
-		<!-- PROFILES COMPONENT -->
-		<script src="/ng-upgrade-app/profiles/profiles.directive.js"></script>
-		<script src="/ng-upgrade-app/profiles/me/profiles-me.directive.js"></script>
-		<script src="/ng-upgrade-app/profiles/view/profiles-view.directive.js"></script>
-		<script src="/ng-upgrade-app/profiles/add/profiles-add.directive.js"></script>
 	</body>
 </html>

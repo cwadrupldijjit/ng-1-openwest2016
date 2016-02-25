@@ -1,17 +1,15 @@
-System.register(['angular2/upgrade'], function(exports_1) {
-    var upgrade_1;
-    var upgradeAdapter;
+System.register(['./adapter', './home/home.directive.js'], function(exports_1) {
+    var adapter_1;
     return {
         setters:[
-            function (upgrade_1_1) {
-                upgrade_1 = upgrade_1_1;
-            }],
+            function (adapter_1_1) {
+                adapter_1 = adapter_1_1;
+            },
+            function (_1) {}],
         execute: function() {
-            upgradeAdapter = new upgrade_1.UpgradeAdapter();
-            upgradeAdapter.bootstrap(document.body, ['AppThree'], { strictDI: true });
-            exports_1("upgradeAdapter", upgradeAdapter);
+            adapter_1.upgradeAdapter.bootstrap(document.body, ['AppThree'], { strictDI: true });
         }
     }
 });
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9ib290LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O1FBR00sY0FBYzs7Ozs7OztZQUFkLGNBQWMsR0FBRyxJQUFJLHdCQUFjLEVBQUUsQ0FBQztZQUU1QyxjQUFjLENBQUMsU0FBUyxDQUFDLFFBQVEsQ0FBQyxJQUFJLEVBQUUsQ0FBQyxVQUFVLENBQUMsRUFBRSxFQUFDLFFBQVEsRUFBRSxJQUFJLEVBQUMsQ0FBQyxDQUFDO1lBRS9ELDJDQUFjIiwiZmlsZSI6ImFwcC9ib290LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgYm9vdHN0cmFwIH0gZnJvbSAnYW5ndWxhcjIvcGxhdGZvcm0vYnJvd3Nlcic7XHJcbmltcG9ydCB7IFVwZ3JhZGVBZGFwdGVyIH0gZnJvbSAnYW5ndWxhcjIvdXBncmFkZSc7XHJcblxyXG5jb25zdCB1cGdyYWRlQWRhcHRlciA9IG5ldyBVcGdyYWRlQWRhcHRlcigpO1xyXG5cclxudXBncmFkZUFkYXB0ZXIuYm9vdHN0cmFwKGRvY3VtZW50LmJvZHksIFsnQXBwVGhyZWUnXSwge3N0cmljdERJOiB0cnVlfSk7XHJcblxyXG5leHBvcnQgeyB1cGdyYWRlQWRhcHRlciB9OyJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9ib290LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztZQUVBLHdCQUFjLENBQUMsU0FBUyxDQUFDLFFBQVEsQ0FBQyxJQUFJLEVBQUUsQ0FBQyxVQUFVLENBQUMsRUFBRSxFQUFDLFFBQVEsRUFBRSxJQUFJLEVBQUMsQ0FBQyxDQUFDIiwiZmlsZSI6ImFwcC9ib290LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXBncmFkZUFkYXB0ZXIgfSBmcm9tICcuL2FkYXB0ZXInO1xyXG5cclxudXBncmFkZUFkYXB0ZXIuYm9vdHN0cmFwKGRvY3VtZW50LmJvZHksIFsnQXBwVGhyZWUnXSwge3N0cmljdERJOiB0cnVlfSk7XHJcblxyXG5pbXBvcnQgJy4vaG9tZS9ob21lLmRpcmVjdGl2ZS5qcyc7Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
