@@ -10,7 +10,6 @@ System.register(['../adapter', './home.component'], function(exports_1) {
             }],
         execute: function() {
             'use strict';
-            console.log('help');
             angular
                 .module('AppThree.home')
                 .directive('home', adapter_1.upgradeAdapter.downgradeNg2Component(home_component_1.HomeComponent));
@@ -18,4 +17,4 @@ System.register(['../adapter', './home.component'], function(exports_1) {
     }
 });
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9ob21lL2hvbWUuZGlyZWN0aXZlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O1lBRUEsWUFBWSxDQUFDO1lBRWIsT0FBTyxDQUFDLEdBQUcsQ0FBQyxNQUFNLENBQUMsQ0FBQTtZQUVuQixPQUFPO2lCQUNMLE1BQU0sQ0FBQyxlQUFlLENBQUM7aUJBQ3ZCLFNBQVMsQ0FBQyxNQUFNLEVBQUUsd0JBQWMsQ0FBQyxxQkFBcUIsQ0FBQyw4QkFBYSxDQUFDLENBQUMsQ0FBQyIsImZpbGUiOiJhcHAvaG9tZS9ob21lLmRpcmVjdGl2ZS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVwZ3JhZGVBZGFwdGVyIH0gZnJvbSAnLi4vYWRhcHRlcic7XHJcbmltcG9ydCB7IEhvbWVDb21wb25lbnQgfSBmcm9tICcuL2hvbWUuY29tcG9uZW50JztcclxuJ3VzZSBzdHJpY3QnO1xyXG5cclxuY29uc29sZS5sb2coJ2hlbHAnKVxyXG5cclxuYW5ndWxhclxyXG5cdC5tb2R1bGUoJ0FwcFRocmVlLmhvbWUnKVxyXG5cdC5kaXJlY3RpdmUoJ2hvbWUnLCB1cGdyYWRlQWRhcHRlci5kb3duZ3JhZGVOZzJDb21wb25lbnQoSG9tZUNvbXBvbmVudCkpOyJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9ob21lL2hvbWUuZGlyZWN0aXZlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O1lBRUEsWUFBWSxDQUFDO1lBRWIsT0FBTztpQkFDTCxNQUFNLENBQUMsZUFBZSxDQUFDO2lCQUN2QixTQUFTLENBQUMsTUFBTSxFQUFFLHdCQUFjLENBQUMscUJBQXFCLENBQUMsOEJBQWEsQ0FBQyxDQUFDLENBQUMiLCJmaWxlIjoiYXBwL2hvbWUvaG9tZS5kaXJlY3RpdmUuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1cGdyYWRlQWRhcHRlciB9IGZyb20gJy4uL2FkYXB0ZXInO1xyXG5pbXBvcnQgeyBIb21lQ29tcG9uZW50IH0gZnJvbSAnLi9ob21lLmNvbXBvbmVudCc7XHJcbid1c2Ugc3RyaWN0JztcclxuXHJcbmFuZ3VsYXJcclxuXHQubW9kdWxlKCdBcHBUaHJlZS5ob21lJylcclxuXHQuZGlyZWN0aXZlKCdob21lJywgdXBncmFkZUFkYXB0ZXIuZG93bmdyYWRlTmcyQ29tcG9uZW50KEhvbWVDb21wb25lbnQpKTsiXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=
