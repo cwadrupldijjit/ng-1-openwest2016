@@ -21,7 +21,9 @@
 	function ProfileView($stateParams, ProfileService) {
 		var vm = this;
 		
-		vm.profile = getProfile();
+		vm.profile;
+		
+		getProfile();
 		
 		function getProfile() {
 			ProfileService

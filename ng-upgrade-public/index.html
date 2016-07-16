@@ -31,7 +31,7 @@
 		<script src="/ng-upgrade-app/services/profile.service.js"></script>
 		
 		<!-- APP COMPONENT -->
-		<script src="/ng-upgrade-app/app.directive.js"></script>
+		<script src="/ng-upgrade-app/app.component.js"></script>
 		
 		<!-- HOME COMPONENT -->
 		<!--<script src="/ng-upgrade-app/home/home.directive.js"></script>-->
@@ -45,29 +45,15 @@
 		
 		
 		<!-- Angular 2.x Dependencies -->
-		<script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
+		<script src="/node_modules/core-js/client/shim.min.js"></script>
+		<script src="/node_modules/zone.js/dist/zone.js"></script>
+		<script src="/node_modules/reflect-metadata/Reflect.js"></script>
 		<script src="/node_modules/systemjs/dist/system.src.js"></script>
-		<script src="/node_modules/rxjs/bundles/Rx.js"></script>
-		<script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
-		<script src="/node_modules/angular2/bundles/upgrade.dev.js"></script>
-		<script src="/node_modules/angular2/bundles/router.dev.js"></script>
-		<script src="/node_modules/angular2/bundles/http.dev.js"></script>
 		
+		<script src="/ng-upgrade-system-config.js"></script>
 		<script>
-			System.config({
-				map: {
-					'/': '/ng-upgrade-app'
-				},
-				packages: {
-					'/ng-upgrade-app': {
-						format: 'register',
-						defaultExtension: 'js'
-					}
-				}
-			});
-			
-			System.import('/ng-upgrade-app/boot')
-				  .then(null, console.error.bind(console));
+			System.import('app')
+				  .catch(function(err) {console.warn(err)});
 		</script>
 	</body>
 </html>

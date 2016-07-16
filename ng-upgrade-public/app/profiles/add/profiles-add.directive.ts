@@ -8,7 +8,7 @@
 	function AddDirective() {
 		return {
 			restrict: 'E',
-			templateUrl: '/ng-app/profiles/add/profiles-add.template.html',
+			templateUrl: '/ng-upgrade-app/profiles/add/profiles-add.template.html',
 			controller: Add,
 			controllerAs: 'vm',
 			scope: {},
@@ -27,7 +27,7 @@
 		vm.saveInterest = saveInterest;
 		vm.deleteInterest = deleteInterest;
 		vm.editInterest = editInterest;
-		vm.newInterest = '';
+		vm.newInterest = {name: ''};
 		vm.profile = {
 			name: 'Eleventh Doctor',
 			age: 1245,
@@ -36,15 +36,15 @@
 		};
 		vm.interestsEdit = [];
 		
-		vm.profile.interests.new = 'something';
+		vm.profile.interests.new = {name: ''};
 		
 		function saveProfile() {
 			ProfileService
 				.saveProfile(vm.profile)
 					.then(function addProfileSuccess(response) {
-						$state.go('Profiles.View', {newProfile: response, id: response.id});
+						$state.go('Profiles.View', {newProfile: response, id: response._id});
 					}, function addProfileError(err) {
-						alert(err);
+						console.warn(err);
 					});
 		}
 		
@@ -54,46 +54,42 @@
 		
 		function cancelInterestEdit(index) {
 			if (index === 'new') {
-				vm.newInterest = '';
+				vm.newInterest = {name: ''};
 			} else {
 				vm.profile.interests[index] = vm.interestsEdit[index];
 			}
-			vm.interestsEdit[index] = '';
+			vm.interestsEdit[index] = null;
 		}
 		
 		function saveInterest(index) {
 			if (index === 'new') {
 				vm.profile.interests.push(vm.newInterest);
-				vm.newInterest = '';
+				vm.newInterest = {name: ''};
 			}
-			vm.interestsEdit[index] = '';
+			vm.interestsEdit[index] = null;
 		}
 		
 		function deleteInterest(index) {
 			try {
-				if (index === undefined) {
-					throw('You\'re trying to delete an interest that doesn\'t exist');
-				}
-				if (confirm('Are you sure you want to delete this interest?')) {
-					vm.profile.interests.splice(index, 1);
-				}
+							if (index === undefined) {
+								throw('You\'re trying to delete an interest that doesn\'t exist');
+							}
+							if (confirm('Are you sure you want to delete this interest?')) {
+								vm.profile.interests.splice(index, 1);
+							}
 			} catch (e) {
-				alert(e);
+				console.warn(e);
 			}
 		}
 		
 		function editInterest(index) {
-			try {
-				if (index === undefined) {
-					throw('You\'re trying to edit an interest that doesn\'t exist');
-				}
-				
-				if (index === 'new') 
-					vm.interestsEdit.new = 'true';
-				else vm.interestsEdit[index] = vm.profile.interests[index];
-			} catch (e) {
-				alert(e);
+			if (index === undefined) {
+				throw('You\'re trying to edit an interest that doesn\'t exist');
 			}
+			
+			if (index === 'new') 
+				vm.interestsEdit.new = true;
+			else vm.interestsEdit[index] = JSON.parse(JSON.stringify(vm.profile.interests[index]));
 		}
 	}
 })();

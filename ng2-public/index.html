@@ -15,28 +15,16 @@
 	<body>
 		<app>Loading . . .</app>
 		
-		<script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
+		<script src="/node_modules/core-js/client/shim.min.js"></script>
+		<script src="/node_modules/zone.js/dist/zone.js"></script>
+		<script src="/node_modules/reflect-metadata/Reflect.js"></script>
 		<script src="/node_modules/systemjs/dist/system.src.js"></script>
-		<script src="/node_modules/rxjs/bundles/Rx.js"></script>
-		<script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
-		<script src="/node_modules/angular2/bundles/router.dev.js"></script>
-		<script src="/node_modules/angular2/bundles/http.dev.js"></script>
 		
+		<script src="/ng2-system-config.js"></script>
 		<script>
-			System.config({
-				map: {
-					'/': '/ng2-app'
-				},
-				packages: {
-					'/ng2-app': {
-						format: 'register',
-						defaultExtension: 'js'
-					}
-				}
+			System.import('app').catch(function(err) {
+				console.warn(err);
 			});
-			
-			System.import('/ng2-app/boot')
-				  .then(null, console.error.bind(console));
 		</script>
 	</body>
 </html>

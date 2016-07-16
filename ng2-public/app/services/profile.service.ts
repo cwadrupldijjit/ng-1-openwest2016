@@ -1,33 +1,33 @@
-import { Injectable } from 'angular2/core';
-import { Http, Headers, RequestOptions, RequestMethod } from 'angular2/http';
+import { Injectable } from '@angular/core';
+import { Http, Headers, RequestOptions, RequestMethod } from '@angular/http';
 
 interface ProfileInterface {
-	id?: number;
-	name: string;
-	age: number;
-	favoriteFood: string;
+	_id?: string|number;
+	name?: string;
+	age?: number;
+	favoriteFood?: string;
+	interests?: {
+		name: string; 
+		id?: string|number
+	}[];
 	image?: string;
 }
 
-class Profile implements ProfileInterface {
-	interests: string[] = [];
-	id: number = -1;
-	img: string = '/common-assets/generic-avatar.png';
-	
-	constructor(public name: string = 'Eleventh Doctor', 
-				public age: number = 1245,
-				public favoriteFood: string = 'Fish Fingers and Custard') { }
-}
-
-
 @Injectable()
 class ProfileService {
-	profiles: Profile[] = [];
+	profiles: ProfileInterface[] = [];
 	postHeaders: Headers = new Headers({
 		'Content-Type': 'application/json'
 	});
 	postOptions = {
 		headers: this.postHeaders
+	};
+	example: ProfileInterface = {
+		name: 'Eleventh Doctor',
+		age: 1247,
+		favoriteFood: 'Fish Fingers and Custard',
+		image: '',
+		interests: []
 	};
 	
 	constructor(public http: Http) {}
@@ -58,18 +58,16 @@ class ProfileService {
 	
 	saveInterest(interest: string, profileId, index) {
 		let url = '/api/profiles/' + profileId + '/interests';
-		let data = JSON.stringify({interest});
-		if (index !== 'new') {
-			url += '?index=' + index;
-		}
+		let data = JSON.stringify(interest);
+		
 		return this.http.post(url, data, this.postOptions)
 						.map((response) => response.json());
 	}
 	
 	deleteInterest(interest, profileId) {
-		return this.http.delete('/api/profiles/' + profileId + '/interests?q=' + interest)
+		return this.http.delete('/api/profiles/' + profileId + '/interests?q=' + interest._id)
 						.map((response) => response.json());
 	}
 }
 
-export { ProfileService, Profile, ProfileInterface };
+export { ProfileService, ProfileInterface };

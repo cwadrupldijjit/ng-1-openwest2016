@@ -5,9 +5,9 @@
 		</div>
 		<h4 [ngClass]="{'show': isShowing}">Profile Selection:</h4>
 		<ul [ngClass]="{'show': isShowing}">
-			<li (click)="toggleProfiles()" [routerLink]="['./Me']">Me</li>
-			<li (click)="toggleProfiles()" [routerLink]="['./View', {id: profile.id}]" *ngFor="#profile of profiles #$index = index">{{ profile.name }}</li>
-			<li (click)="toggleProfiles()" [routerLink]="['./Add']">+ Add new</li>
+			<li (click)="toggleProfiles()" [routerLink]="['./me']">Me</li>
+			<li (click)="toggleProfiles()" [routerLink]="['./view', profile._id]" *ngFor="let profile of profiles let $index = index">{{ profile.name }}</li>
+			<li (click)="toggleProfiles()" [routerLink]="['./add']">+ Add new</li>
 		</ul>
 	</nav>
 	<router-outlet></router-outlet>

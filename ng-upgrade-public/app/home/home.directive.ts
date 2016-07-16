@@ -4,4 +4,4 @@ import { HomeComponent } from './home.component';
 
 angular
 	.module('AppThree.home')
-	.directive('home', upgradeAdapter.downgradeNg2Component(HomeComponent));
+	.directive('home', <ng.IDirectiveFactory>upgradeAdapter.downgradeNg2Component(HomeComponent));

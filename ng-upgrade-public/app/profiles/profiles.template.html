@@ -7,7 +7,7 @@
 		<h4 ng-class="{'show': vm.isShowing}">Profile Selection:</h4>
 		<ul ng-class="{'show': vm.isShowing}">
 			<li ng-click="vm.toggleProfiles()" ui-sref="Profiles.Me">Me</li>
-			<li ng-click="vm.toggleProfiles()" ui-sref="Profiles.View({id: profile.id})" ng-repeat="profile in vm.availableProfiles track by $index">{{profile.name}}</li>
+			<li ng-click="vm.toggleProfiles()" ui-sref="Profiles.View({id: profile._id})" ng-repeat="profile in vm.availableProfiles track by $index">{{profile.name}}</li>
 			<li ng-click="vm.toggleProfiles()" ui-sref="Profiles.Add">+ Add new</li>
 		</ul>
 	</nav>

@@ -24,7 +24,7 @@
 		var vm = this;
 		
 		vm.profile;
-		vm.newInterest = '';
+		vm.newInterest = {name: ''};
 		vm.interestsEdit = [];
 		
 		vm.cancelInterestEdit = cancelInterestEdit;
@@ -46,7 +46,7 @@
 		
 		function cancelInterestEdit(index) {
 			if (index === 'new') {
-				vm.newInterest = '';
+				vm.newInterest = {name: ''};
 				vm.interestsEdit[index] = '';
 			} else {
 				vm.profile.interests[index] = vm.interestsEdit[index];
@@ -65,12 +65,12 @@
 			
 			console.log('dir', interest);
 			ProfileService
-				.saveInterest(interest, vm.profile.id, index)
+				.saveInterest(interest, vm.profile._id, index)
 					.then(function saveInterestSuccess(response) {
 						if (index === 'new') {
 							vm.profile.interests.push(response);
 							
-							vm.newInterest = '';
+							vm.newInterest = {name: ''};
 						} else {
 							vm.profile.interests[index] = response;
 						}
@@ -91,7 +91,7 @@
 				}
 				if (confirm('Are you sure you want to delete this interest?')) {
 					ProfileService
-						.deleteInterest(vm.profile.interests[index], vm.profile.id)
+						.deleteInterest(vm.profile.interests[index], vm.profile._id)
 							.then(function deleteInterestSuccess(response) {
 								vm.profile.interests.splice(index, 1);
 							}, function deleteInterestError(err) {

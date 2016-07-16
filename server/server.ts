@@ -1,8 +1,7 @@
-/// <reference path="../typings/main.d.ts" />
-
-import express = require('express');
-import bodyParser = require('body-parser');
-import cors = require('cors');
+import * as express from 'express';
+import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
+import * as mongoose from 'mongoose';
 
 import { router } from './routes';
 
@@ -32,7 +31,13 @@ app.use('/common-assets', express.static(__dirname + '/../common-assets'));
 app.use('/ng-app', express.static(pathToNgPublic + '/app'));
 app.use('/ng2-example/ng2-app', express.static(pathToNg2Public + '/app'));
 app.use('/ng2-app', express.static(pathToNg2Public + '/app'));
+app.use('/ng2-system-config.js', (req, res) => {
+	res.sendFile('system.config.js', {root: __dirname + '/../ng2-public'});
+});
 app.use('/ng-upgrade-app', express.static(pathToNgUpgradePublic + '/app'));
+app.use('/ng-upgrade-system-config.js', (req, res) => {
+	res.sendFile('system.config.js', {root: __dirname + '/../ng-upgrade-public'});
+});
 
 
 router(app);
@@ -51,7 +56,16 @@ app.all('/*', (req, res) => {
 	res.sendFile('landing.html', {root: __dirname + '/..'});
 });
 
+mongoose.Promise = global.Promise;
+
+
+mongoose.connect('mongodb://localhost/ng-upgrade-profiles');
+mongoose.connection.once('open', () => {
+	console.log('Mongoose connected to ng-upgrade-profiles db at "localhost:27017"');
+});
 
 app.listen('8787', function listener() {
 	console.log('Express app listening at "http://localhost:8787/"');
 });
+
+export { mongoose };

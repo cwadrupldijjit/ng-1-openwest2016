@@ -1,11 +1,9 @@
-import { Component, View } from 'angular2/core';
-import { Router, Location, ROUTER_DIRECTIVES } from 'angular2/router';
-import { ProfileService, Profile } from '../../services/profile.service';
+import { Component } from '@angular/core';
+import { Router, ROUTER_DIRECTIVES } from '@angular/router';
+import { ProfileService, ProfileInterface } from '../../services/profile.service';
 
 @Component({
-	selector: 'add'
-})
-@View({
+	selector: 'add',
 	templateUrl: '/ng2-app/profiles/add/profiles-add.template.html',
 	styleUrls: [
 		'ng2-app/profiles/profile-subroutes.styles.css'
@@ -15,25 +13,24 @@ import { ProfileService, Profile } from '../../services/profile.service';
 	],
 })
 class AddProfileComponent {
-	profile = new Profile;
+	profile: ProfileInterface = <ProfileInterface>JSON.parse(JSON.stringify(this.ProfileService.example));
 	interestsEdit = [];
-	newInterest: string;
+	newInterest: {name: string; id?: string|number} = {name: ''};
 	
 	constructor(public ProfileService: ProfileService, 
-				public Router: Router,
-				public Location: Location) {}
+				public Router: Router) {}
 	
 	saveProfile() {
 		this.ProfileService.saveProfile(this.profile)
 				.subscribe((response) => {
 					console.log(response);
-					this.Router.navigate(['/Profiles', 'View', {id: response.id}])
+					this.Router.navigate(['/profiles/view', response._id]);
 				}, (err) => console.warn(err));
 	}
 	
 	cancelInterestEdit(index) {
 		if (index === 'new') {
-			this.newInterest = '';
+			this.newInterest = {name: ''};
 		} else {
 			this.profile.interests[index] = this.interestsEdit[index];
 		}
@@ -41,13 +38,13 @@ class AddProfileComponent {
 	}
 	
 	cancelEditProfile() {
-		this.Router.navigate(['/Profiles']);
+		this.Router.navigate(['/profiles']);
 	}
 	
 	saveInterest(index) {
 		if (index === 'new') {
 			this.profile.interests.push(this.newInterest);
-			this.newInterest = '';
+			this.newInterest = {name: ''};
 		}
 		this.interestsEdit[index] = '';
 	}

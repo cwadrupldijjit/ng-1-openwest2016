@@ -2,20 +2,20 @@
 
 'use strict';
 
-let gulp = require('gulp');
-let tsc = require('gulp-typescript');
-let sass = require('gulp-sass');
-let sourcemaps = require('gulp-sourcemaps');
-let watch = require('gulp-watch');
-let uglify = require('gulp-uglify');
+var gulp = require('gulp');
+var tsc = require('gulp-typescript');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var watch = require('gulp-watch');
+var uglify = require('gulp-uglify');
 
-let pathToReferenceFile = 'typings/main.d.ts';
-let pathToPublicSass = 'ng-public/**/*.scss';
-let pathToPublic2Ts = [pathToReferenceFile, 'ng2-public/**/*.ts'];
-let pathToPublic2Sass = 'ng2-public/**/*.scss';
-let pathToUpgradeTs = [pathToReferenceFile, 'ng-upgrade-public/**/*.ts'];
-let pathToUpgradeSass = 'ng-upgrade-public/**/*.scss';
-let pathToServerTs = [pathToReferenceFile, 'server/**/*.ts'];
+var pathToReferenceFile = './typings/main.d.ts';
+var pathToPublicSass = 'ng-public/**/*.scss';
+var pathToPublic2Ts = [pathToReferenceFile, 'ng2-public/**/*.ts'];
+var pathToPublic2Sass = 'ng2-public/**/*.scss';
+var pathToUpgradeTs = [pathToReferenceFile, 'ng-upgrade-public/**/*.ts'];
+var pathToUpgradeSass = 'ng-upgrade-public/**/*.scss';
+var pathToServerTs = [pathToReferenceFile, 'server/**/*.ts'];
 
 function TypescriptOptions(module, 
 						   emitDecoratorMetadata, 
@@ -26,8 +26,12 @@ function TypescriptOptions(module,
 	this.noImplicitAny = false;
 	
 	this.module = module; 
-	this.emitDecoratorMetadata = emitDecoratorMetadata; 
-	this.experimentalDecorators = experimentalDecorators;
+	if (emitDecoratorMetadata) {
+		this.emitDecoratorMetadata = emitDecoratorMetadata; 
+	}
+	if (experimentalDecorators) {
+		this.experimentalDecorators = experimentalDecorators;
+	}
 };
 
 function compilePublic() {
@@ -39,7 +43,7 @@ function compilePublic() {
 }
 
 function compilePublic2() {
-	let publicTsConfig = new TypescriptOptions('system', true, true);
+	var publicTsConfig = new TypescriptOptions('system', true, true);
 	
 	gulp.src(pathToPublic2Ts)
 		.pipe(sourcemaps.init())
@@ -55,7 +59,7 @@ function compilePublic2() {
 }
 
 function compileUpgrade() {
-	let upgradeTsConfig = new TypescriptOptions('system', true, true);
+	var upgradeTsConfig = new TypescriptOptions('system', true, true);
 	
 	gulp.src(pathToUpgradeTs)
 		.pipe(sourcemaps.init())
@@ -71,7 +75,7 @@ function compileUpgrade() {
 }
 
 function compileServerTs() {
-	let serverTsConfig = new TypescriptOptions('commonjs', null, null);
+	var serverTsConfig = new TypescriptOptions('commonjs', null, null);
 	
 	gulp.src(pathToServerTs)
 		.pipe(sourcemaps.init())

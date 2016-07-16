@@ -1,25 +1,24 @@
-import { Component, View, OnInit } from 'angular2/core';
-import { ProfileService, Profile, ProfileInterface } from '../../services/profile.service';
+import { Component, OnInit } from '@angular/core';
+import { FORM_DIRECTIVES } from '@angular/forms';
+import { ProfileService, ProfileInterface } from '../../services/profile.service';
 
 @Component({
 	selector: 'me',
 	providers: [
 		ProfileService
-	]
-})
-@View({
+	],
 	templateUrl: '/ng2-app/profiles/me/profiles-me.template.html',
 	styleUrls: [
 		'ng2-app/profiles/profile-subviews.styles.css'
+	],
+	directives: [
+		FORM_DIRECTIVES
 	]
 })
 class MeComponent implements OnInit {
-	profile = {
-		id: undefined,
-		interests: []
-	};
+	profile: ProfileInterface = <ProfileInterface>{interests: []};
 	interestsEdit = [];
-	newInterest:string = '';
+	newInterest = {name: ''};
 	
 	constructor(public ProfileService: ProfileService) {}
 	
@@ -36,8 +35,8 @@ class MeComponent implements OnInit {
 			}
 			
 			if (index === 'new') 
-				this.interestsEdit[index] = 'true';
-			else this.interestsEdit[index] = this.profile.interests[index];
+				this.interestsEdit[index] = {name: ''};
+			else this.interestsEdit[index] = JSON.parse(JSON.stringify(this.profile.interests[index]));
 		} catch (e) {
 			alert(e);
 		}
@@ -49,7 +48,7 @@ class MeComponent implements OnInit {
 				throw('You\'re trying to delete an interest that doesn\'t exist');
 			}
 			if (confirm('Are you sure you want to delete this interest?')) {
-				this.ProfileService.deleteInterest(this.profile.interests[index], this.profile.id)
+				this.ProfileService.deleteInterest(this.profile.interests[index], this.profile._id)
 						.subscribe((response) => {
 							this.profile.interests.splice(index, 1);
 						}, (err) => console.warn(err));
@@ -65,31 +64,31 @@ class MeComponent implements OnInit {
 			if (index === 'new') {
 				interest = this.newInterest;
 			} else {
-				interest = this.profile.interests[index];
+				interest = this.interestsEdit[index];
 			}
 			
 			this.ProfileService
-				.saveInterest(interest, this.profile.id, index)
+				.saveInterest(interest, this.profile._id, index)
 					.subscribe((response) => {
 						if (index === 'new') {
 							this.profile.interests.push(response);
 							
-							this.newInterest = '';
+							this.newInterest = {name: ''};
 						} else {
 							this.profile.interests[index] = response;
 						}
 						
-						this.interestsEdit[index] = '';
+						this.interestsEdit[index] = null; 
 					}, (err) => console.warn(err));
 	}
 	
 	cancelInterestEdit(index) {
 		if (index === 'new') {
-			this.newInterest = '';
+			this.newInterest = {name: ''};
 		} else {
 			this.profile.interests[index] = this.interestsEdit[index];
 		}
-		this.interestsEdit[index] = '';
+		this.interestsEdit[index] = null;
 	}
 }
 

@@ -11,7 +11,7 @@
 <p>
 	<b>Favorite Food:</b> {{ profile.favoriteFood }}
 </p>
-<div>
+<div *ngIf="profile">
 	<b>Interests</b>
 	<ul class="profile-interests">
 		<li 
@@ -20,18 +20,21 @@
 		>
 			No interests are currently listed. Click to add one.
 		</li>
-		<li *ngFor="#interest of profile.interests #i=index">
+		<li *ngFor="let interest of profile.interests let i = index">
 			<span *ngIf="!interestsEdit[i]">
-				<span (click)="editInterest(i)">{{ interest }}</span>
+				<span (click)="editInterest(i)">{{ interest.name }}</span>
 				<span class="delete-interest" (click)="deleteInterest(i)">x</span>
 			</span>
-			<input type="text" *ngIf="interestsEdit[i]" [(ngModel)]="profile.interests[i]">
+			
+			<input type="text" *ngIf="interestsEdit[i]" [(ngModel)]="interestsEdit[i].name">
 			<input type="submit" *ngIf="interestsEdit[i]" (click)="saveInterest(i)">
 			<button *ngIf="interestsEdit[i]" (click)="cancelInterestEdit(i)">Cancel</button>
 		</li>
+		
 		<li *ngIf="(profile.interests.length > 0 && profile.interests.length <= 5) || interestsEdit.new">
 			<span *ngIf="!interestsEdit.new" (click)="editInterest('new')">Add new</span>
-			<input type="text" *ngIf="interestsEdit.new" [(ngModel)]="newInterest">
+			
+			<input type="text" *ngIf="interestsEdit.new" [(ngModel)]="newInterest.name">
 			<input type="submit" *ngIf="interestsEdit.new" (click)="saveInterest('new')">
 			<button *ngIf="interestsEdit.new" (click)="cancelInterestEdit('new')">Cancel</button>
 		</li>

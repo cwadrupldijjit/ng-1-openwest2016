@@ -1,14 +1,15 @@
-import { Component, View, OnInit } from 'angular2/core';
-import { RouteParams, ROUTER_DIRECTIVES } from 'angular2/router';
+import { Component, OnInit } from '@angular/core';
+import { ROUTER_DIRECTIVES, ActivatedRoute, Router } from '@angular/router';
 import { ProfileService } from '../../services/profile.service';
 
 @Component({
-	selector: 'view'
-})
-@View({
+	selector: 'view',
 	templateUrl: '/ng2-app/profiles/view/profiles-view.template.html',
 	styleUrls: [
 		'ng2-app/profiles/profile-subviews.styles.css'
+	],
+	providers: [
+		ProfileService
 	],
 	directives: [
 		ROUTER_DIRECTIVES
@@ -19,17 +20,18 @@ class ViewProfileComponent implements OnInit {
 		interests: []
 	};
 	
-	constructor(public ProfileService: ProfileService,
-				public RouteParams: RouteParams) {
-		this.ProfileService.getProfile(this.RouteParams.get('id'))
-				.subscribe((response) => this.profile = response,
-						   (err) => console.warn(err));
-	}
+	sub: any;
+	
+	constructor(private ProfileService: ProfileService, private route: ActivatedRoute, private router: Router) {}
 	
 	ngOnInit() {
-		// this.ProfileService.getProfile(this.RouteParams.get('id'))
-		// 		.subscribe((response) => this.profile = response,
-		// 				   (err) => console.warn(err));
+		this.sub = this.route.params.subscribe(params => {
+			let id = params['id'];
+			
+			this.ProfileService.getProfile(id)
+				.subscribe(	response => this.profile = response,
+						   	err => console.warn(err));
+		});
 	}
 }
 

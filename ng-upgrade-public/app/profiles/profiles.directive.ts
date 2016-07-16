@@ -8,7 +8,7 @@
 	function ProfilesDirective() {
 		return {
 			restrict: 'E',
-			templateUrl: '/ng-app/profiles/profiles.template.html',
+			templateUrl: '/ng-upgrade-app/profiles/profiles.template.html',
 			controller: Profiles,
 			controllerAs: 'vm',
 			scope: {},

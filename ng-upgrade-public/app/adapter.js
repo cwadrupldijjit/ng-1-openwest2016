@@ -1,4 +1,6 @@
-System.register(['angular2/upgrade'], function(exports_1) {
+System.register(['@angular/upgrade'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var upgrade_1;
     var upgradeAdapter;
     return {
@@ -13,4 +15,4 @@ System.register(['angular2/upgrade'], function(exports_1) {
     }
 });
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9hZGFwdGVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O1FBRU0sY0FBYzs7Ozs7OztZQUFkLGNBQWMsR0FBRyxJQUFJLHdCQUFjLEVBQUUsQ0FBQztZQUVuQywyQ0FBYyIsImZpbGUiOiJhcHAvYWRhcHRlci5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFVwZ3JhZGVBZGFwdGVyIH0gZnJvbSAnYW5ndWxhcjIvdXBncmFkZSc7XHJcblxyXG5jb25zdCB1cGdyYWRlQWRhcHRlciA9IG5ldyBVcGdyYWRlQWRhcHRlcigpO1xyXG5cclxuZXhwb3J0IHsgdXBncmFkZUFkYXB0ZXIgfTsiXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9hZGFwdGVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7UUFFTSxjQUFjOzs7Ozs7O1lBQWQsY0FBYyxHQUFHLElBQUksd0JBQWMsRUFBRSxDQUFDO1lBRW5DLDJDQUFjIiwiZmlsZSI6ImFwcC9hZGFwdGVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgVXBncmFkZUFkYXB0ZXIgfSBmcm9tICdAYW5ndWxhci91cGdyYWRlJztcclxuXHJcbmNvbnN0IHVwZ3JhZGVBZGFwdGVyID0gbmV3IFVwZ3JhZGVBZGFwdGVyKCk7XHJcblxyXG5leHBvcnQgeyB1cGdyYWRlQWRhcHRlciB9OyJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

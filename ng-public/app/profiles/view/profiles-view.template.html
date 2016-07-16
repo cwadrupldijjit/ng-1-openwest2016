@@ -12,6 +12,6 @@
 <p ng-if="vm.profile.interests.length">
 	<b>Interests:</b> 
 	<ul>
-		<li ng-repeat="interest in vm.profile.interests track by $index">{{ interest }}</li>
+		<li ng-repeat="interest in vm.profile.interests track by $index">{{ interest.name }}</li>
 	</ul>
 </p>

@@ -1,5 +1,5 @@
-import { Component, View, OnInit } from 'angular2/core';
-import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
+import { Component, OnInit } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { NoProfileComponent } from './no-profile/no-profile.component';
 import { MeComponent } from './me/profiles-me.component';
 import { AddProfileComponent } from './add/profiles-add.component';
@@ -10,9 +10,7 @@ import { ProfileService } from '../services/profile.service';
 	selector: 'profiles',
 	providers: [
 		ProfileService
-	]
-})
-@View({
+	],
 	templateUrl: '/ng2-app/profiles/profiles.template.html',
 	styleUrls: [
 		'ng2-app/profiles/profiles.styles.css'
@@ -21,12 +19,12 @@ import { ProfileService } from '../services/profile.service';
 		ROUTER_DIRECTIVES
 	]
 })
-@RouteConfig([
-	{ path: '/', 		 component: NoProfileComponent,   as: 'NoProfile', useAsDefault: true },
-	{ path: '/me', 		 component: MeComponent, 		  as: 'Me' },
-	{ path: '/view/:id', component: ViewProfileComponent, as: 'View' },
-	{ path: '/add', 	 component: AddProfileComponent,  as: 'Add' },
-])
+// @RouteConfig([
+// 	{ path: '/', 		 component: NoProfileComponent,   as: 'NoProfile', useAsDefault: true },
+// 	{ path: '/me', 		 component: MeComponent, 		  as: 'Me' },
+// 	{ path: '/view/:id', component: ViewProfileComponent, as: 'View' },
+// 	{ path: '/add', 	 component: AddProfileComponent,  as: 'Add' },
+// ])
 class ProfilesComponent implements OnInit {
 	profiles = [];
 	isShowing: boolean = false;

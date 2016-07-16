@@ -19,7 +19,7 @@
 			<li ng-if="!(vm.profile.interests.length !== 0 || vm.interestsEdit.new)" ng-click="vm.editInterest('new')">No interests are currently listed. Click to add one.</li>
 			<li ng-repeat="interest in vm.profile.interests track by $index">
 				<span ng-if="!vm.interestsEdit[$index]">
-					<span ng-click="vm.editInterest($index)">{{ interest }}</span>
+					<span ng-click="vm.editInterest($index)">{{ interest.name }}</span>
 					<span class="delete-interest" ng-click="vm.deleteInterest($index)">x</span>
 				</span>
 				<input type="text" ng-if="vm.interestsEdit[$index]" ng-model="vm.profile.interests[$index]">
@@ -28,7 +28,7 @@
 			</li>
 			<li ng-if="(vm.profile.interests.length > 0 && vm.profile.interests.length <= 5) || vm.interestsEdit.new">
 				<span ng-if="!vm.interestsEdit.new" ng-click="vm.editInterest('new')">Add new</span>
-				<input type="text" ng-if="vm.interestsEdit.new" ng-model="vm.newInterest">
+				<input type="text" ng-if="vm.interestsEdit.new" ng-model="vm.newInterest.name">
 				<input type="submit" ng-if="vm.interestsEdit.new" ng-click="vm.saveInterest('new')">
 				<button ng-if="vm.interestsEdit.new" ng-click="vm.cancelInterestEdit('new')">Cancel</button>
 			</li>

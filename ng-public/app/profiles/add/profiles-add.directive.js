@@ -27,7 +27,7 @@
 		vm.saveInterest = saveInterest;
 		vm.deleteInterest = deleteInterest;
 		vm.editInterest = editInterest;
-		vm.newInterest = '';
+		vm.newInterest = {name: ''};
 		vm.profile = {
 			name: 'Eleventh Doctor',
 			age: 1245,
@@ -54,17 +54,17 @@
 		
 		function cancelInterestEdit(index) {
 			if (index === 'new') {
-				vm.newInterest = '';
+				vm.newInterest = {name: ''};
 			} else {
 				vm.profile.interests[index] = vm.interestsEdit[index];
 			}
-			vm.interestsEdit[index] = '';
+			vm.interestsEdit[index] = {name: ''};
 		}
 		
 		function saveInterest(index) {
 			if (index === 'new') {
 				vm.profile.interests.push(vm.newInterest);
-				vm.newInterest = '';
+				vm.newInterest = {name: ''};
 			}
 			vm.interestsEdit[index] = '';
 		}

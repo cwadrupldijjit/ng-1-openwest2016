@@ -1,4 +1,6 @@
-System.register(['./adapter', './home/home.directive.js'], function(exports_1) {
+System.register(['./adapter', './home/home.directive.js'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var adapter_1;
     return {
         setters:[
@@ -12,4 +14,4 @@ System.register(['./adapter', './home/home.directive.js'], function(exports_1) {
     }
 });
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9ib290LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztZQUVBLHdCQUFjLENBQUMsU0FBUyxDQUFDLFFBQVEsQ0FBQyxJQUFJLEVBQUUsQ0FBQyxVQUFVLENBQUMsRUFBRSxFQUFDLFFBQVEsRUFBRSxJQUFJLEVBQUMsQ0FBQyxDQUFDIiwiZmlsZSI6ImFwcC9ib290LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXBncmFkZUFkYXB0ZXIgfSBmcm9tICcuL2FkYXB0ZXInO1xyXG5cclxudXBncmFkZUFkYXB0ZXIuYm9vdHN0cmFwKGRvY3VtZW50LmJvZHksIFsnQXBwVGhyZWUnXSwge3N0cmljdERJOiB0cnVlfSk7XHJcblxyXG5pbXBvcnQgJy4vaG9tZS9ob21lLmRpcmVjdGl2ZS5qcyc7Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9ib290LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O1lBRUEsd0JBQWMsQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLElBQUksRUFBRSxDQUFDLFVBQVUsQ0FBQyxFQUFFLEVBQUMsUUFBUSxFQUFFLElBQUksRUFBQyxDQUFDLENBQUMiLCJmaWxlIjoiYXBwL2Jvb3QuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1cGdyYWRlQWRhcHRlciB9IGZyb20gJy4vYWRhcHRlcic7XHJcblxyXG51cGdyYWRlQWRhcHRlci5ib290c3RyYXAoZG9jdW1lbnQuYm9keSwgWydBcHBUaHJlZSddLCB7c3RyaWN0REk6IHRydWV9KTtcclxuXHJcbmltcG9ydCAnLi9ob21lL2hvbWUuZGlyZWN0aXZlLmpzJzsiXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=

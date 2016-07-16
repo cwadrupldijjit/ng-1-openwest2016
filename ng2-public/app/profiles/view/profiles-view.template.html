@@ -12,6 +12,6 @@
 <div *ngIf="profile.interests.length">
 	<b>Interests:</b> 
 	<ul>
-		<li *ngFor="#interest of profile.interests #$index = index">{{ interest }}</li>
+		<li *ngFor="let interest of profile.interests let $index = index">{{ interest.name }}</li>
 	</ul>
 </div>
